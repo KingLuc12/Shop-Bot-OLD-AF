@@ -18,7 +18,7 @@ const TOKEN = process.env.TOKEN
 client.once('ready', async () => {
 	console.log('WORKING!');
     await console.log(`LOGGED IN AS [${client.user.tag}]`)
-    client.user.setAvatar('https://cdn.discordapp.com/attachments/949358380718387291/950119546885406750/771-7716581_art-wumpus-discord-hd-png-download.png')
+    client.user.setActivity('Watching WS 24/7');
 });
 
 client.on('messageCreate', async message => {
