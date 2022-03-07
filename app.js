@@ -129,7 +129,7 @@ client.on('messageCreate', async message => {
         }
     }
 
-    if(command === 'modapp') {
+    /* if(command === '') {
         var serverIcon = message.guild.iconURL();
         const modembed = new MessageEmbed()
         .setColor('#00FFFF')
@@ -142,7 +142,7 @@ client.on('messageCreate', async message => {
         )
         message.delete({timeout: 1000 })
         //message.reply({ embeds: [modembed] });
-    }
+    } */
 });
 
 
