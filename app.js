@@ -128,6 +128,19 @@ client.on('messageCreate', async message => {
             }
         }
     }
+
+    if(command === 'modapp') {
+        var serverIcon = message.guild.iconURL();
+        const modembed = new MessageEmbed()
+        .setColor('#00FFFF')
+        .setTitle('Mod Application')
+        .setAuthor({ name: 'Wumpus Shop', iconURL: `${serverIcon}`, url: 'https://discord.js.org' })
+        .setDescription('This is our mod app!')
+        .setThumbnail(serverIcon)
+        .addFields(
+            { name: 'Link:', value: 'https://forms.gle/nHV4eU4gKJTm5CTL8'}
+        )
+    }
 });
 
 
