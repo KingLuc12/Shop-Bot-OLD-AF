@@ -140,6 +140,8 @@ client.on('messageCreate', async message => {
         .addFields(
             { name: 'Link:', value: 'https://forms.gle/nHV4eU4gKJTm5CTL8'}
         )
+
+        message.reply({ embeds: [modembed] });
     }
 });
 
