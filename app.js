@@ -117,7 +117,7 @@ client.on('messageCreate', async message => {
             .setThumbnail(serverIcon)
             .addFields(
             { name: 'New Item:', value: `${args[1]}`},
-            { name: 'About Item:', value: `${!args[2]}`},
+            { name: 'About Item:', value: `${args[2]}`},
             { name: 'Need Help?', value: 'Conntact a staff member or admin ',},
             )
             .setTimestamp()
