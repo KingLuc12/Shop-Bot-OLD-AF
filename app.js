@@ -85,9 +85,10 @@ client.on('messageCreate', async message => {
 	    .setTimestamp()
             message.delete({timeout: 1000})
             if (!args[0]) return message.channel.send({ embeds:[errorembed] });
-            if (!args[1]) return message.channel.send({ embeds: [errorembed] });
-            if (!args[2]) return message.channel.send({ embeds: [errorembed] });
-            if (!args[3]) return message.channel.send({ embeds: [success] }), client.channels.cache.get(`950103677627162684`).send({ embeds: [itemembed] });
+                if (!args[1]) return message.channel.send({ embeds: [errorembed] });
+                if (!args[2]) return message.channel.send({ embeds: [errorembed] });
+                if (!args[3]) return message.channel.send({ embeds: [success] }), client.channels.cache.get(`950103677627162684`).send({ embeds: [itemembed] });
+                if (!args[4]) return;
         } else {
             if (message.member.roles.cache.has('949358330088947722')){
             var serverIcon = message.guild.iconURL();
@@ -132,6 +133,7 @@ client.on('messageCreate', async message => {
                 if (!args[1]) return message.channel.send({ embeds: [errorembed] });
                 if (!args[2]) return message.channel.send({ embeds: [errorembed] });
                 if (!args[3]) return message.channel.send({ embeds: [success] }), client.channels.cache.get(`950103677627162684`).send({ embeds: [itemembed] });
+                if (!args[4]) return;
             }
         }
     }
