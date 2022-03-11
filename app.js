@@ -36,6 +36,9 @@ client.on('messageCreate', async message => {
     }
 
     if (command === 'clear') {
+        if (args[2] > 100 ){
+            
+        }
         message.channel.bulkDelete(100)
         .then(messages => console.log(`Bulk deleted ${messages.size} messages`))
         .catch(console.error);
@@ -51,7 +54,7 @@ client.on('messageCreate', async message => {
 	    .setDescription('Error while executing command!')
 	    .setThumbnail(serverIcon)
 	    .addFields(
-		{ name: 'Correct usage:', value: '`-sell (product name) (product description)`'},
+		{ name: 'Correct usage:', value: '`-sell (product name) (product description) (product price)`'},
 		{ name: 'Need Help?', value: 'Conntact a staff member or admin ',},
 	    )
 	    .setTimestamp()
@@ -76,13 +79,15 @@ client.on('messageCreate', async message => {
 	    .addFields(
         { name: 'New Item:', value: `${args[1]}`},
         { name: 'About Item:', value: `${args[2]}`},
+        { name: 'Price:', value: `${args[3]}`},
 		{ name: 'Need Help?', value: 'Conntact a staff member or admin ',},
 	    )
 	    .setTimestamp()
             message.delete({timeout: 1000})
             if (!args[0]) return message.channel.send({ embeds:[errorembed] });
             if (!args[1]) return message.channel.send({ embeds: [errorembed] });
-            if (!args[2]) return message.channel.send({ embeds: [success] }), client.channels.cache.get(`950103677627162684`).send({ embeds: [itemembed] });
+            if (!args[2]) return message.channel.send({ embeds: [errorembed] });
+            if (!args[3]) return message.channel.send({ embeds: [success] }), client.channels.cache.get(`950103677627162684`).send({ embeds: [itemembed] });
         } else {
             if (message.member.roles.cache.has('949358330088947722')){
             var serverIcon = message.guild.iconURL();
@@ -93,7 +98,7 @@ client.on('messageCreate', async message => {
 	        .setDescription('Error while executing command!')
 	        .setThumbnail(serverIcon)
 	        .addFields(
-		    { name: 'Correct usage:', value: '`-sell (product name) (product description)`'},
+		    { name: 'Correct usage:', value: '`-sell (product name) (product description)  (product price)`'},
 		    { name: 'Need Help?', value: 'Conntact a staff member or admin ',},
 	        )
 	        .setTimestamp()
@@ -118,13 +123,15 @@ client.on('messageCreate', async message => {
             .addFields(
             { name: 'New Item:', value: `${args[1]}`},
             { name: 'About Item:', value: `${args[2]}`},
+            { name: 'Price:', value: `${args[3]}`},
             { name: 'Need Help?', value: 'Conntact a staff member or admin ',},
             )
             .setTimestamp()
                 message.delete({timeout: 1000})
                 if (!args[0]) return message.channel.send({ embeds:[errorembed] });
                 if (!args[1]) return message.channel.send({ embeds: [errorembed] });
-                if (!args[2]) return message.channel.send({ embeds: [success] }), client.channels.cache.get(`950103677627162684`).send({ embeds: [itemembed] });
+                if (!args[2]) return message.channel.send({ embeds: [errorembed] });
+                if (!args[3]) return message.channel.send({ embeds: [success] }), client.channels.cache.get(`950103677627162684`).send({ embeds: [itemembed] });
             }
         }
     }
